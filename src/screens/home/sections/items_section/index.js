@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
-  Button,
-  Image,
   Text
 } from 'react-native';
 
@@ -13,7 +11,6 @@ import LabelSVG from '../../../../utils/images/white_icons/icon_label_white.svg'
 import StarSVG from '../../../../utils/images/white_icons/icon_star_white.svg'
 
 const ItemsSection = () => {
-  const [isDefaultSignIn, setIsDefaultSignIn] = useState(true);
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>

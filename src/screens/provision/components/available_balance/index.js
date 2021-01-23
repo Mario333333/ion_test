@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 
 import {
   StyleSheet,
   View,
   Text,
-  Dimensions
+
 } from 'react-native';
 
 const AvailableBalance = () => {
-  let leftValueToCenterContainer = (Dimensions.get("window").width - 300) / 2;
   return (
     <View style={{
       ...styles.container,
@@ -22,11 +21,9 @@ const AvailableBalance = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
+    marginTop: 17,
     backgroundColor: "white",
-    top: 166,
-    zIndex: 1000,
-    width: 300,
+    width: "100%",
     height: 120,
     borderRadius: 4,
     shadowOpacity: .5

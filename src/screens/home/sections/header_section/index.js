@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 
 import {
   StyleSheet,
@@ -12,7 +12,6 @@ import star from '../../../../utils/images/png_icons/profile.png'
 
 const HeaderSection = () => {
   let leftValueToCenterContainer = (Dimensions.get("window").width - 300) / 2;
-  console.log("props");
   return (
     <View style={styles.container}>
       <View style={styles.userInformation}>

@@ -2,65 +2,38 @@ import React, { useEffect, useState } from 'react';
 
 
 import {
-  StyleSheet,
   View,
-  Easing,
-  Animated,
-  LogBox
 } from 'react-native';
+
+import ProgressCircle from 'react-native-progress-circle'
+
 
 
 const AnimatedCircle = (props) => {
-
-  let spinValue = new Animated.Value(0)
+  const [percent, setPercent] = useState(0)
 
   useEffect(() => {
-
-    spin()
+    setInterval(() => {
+      setPercent(Math.floor(Math.random() * (100 - 1 + 1) + 1))
+    }, 3000);
   }, [])
 
-  const spin = () => {
-    spinValue.setValue(0)
-    Animated.timing(
-      spinValue,
-      {
-        toValue: 1,
-        duration: 1000,
-        useNativeDriver: true,
-        easing: Easing.linear,
-
-      }
-    ).start(() => spin())
-  }
-
-  const spinValues = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ["0deg", "360deg"]
-  })
-
   return (
-    <Animated.View
-      style={{
-        ...styles.container,
-        transform: [{ rotate: spinValues }]
-      }}>
+    <View >
+      <ProgressCircle
+        percent={percent}
+        radius={191 / 2}
+        borderWidth={24}
+        color="#bb64c8"
+        shadowColor="#e4f4fd"
+        bgColor="#fff"
+      >
+      </ProgressCircle>
 
-    </Animated.View>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    position: "absolute",
-    alignSelf: "center",
-    width: 191,
-    height: 191,
-    borderWidth: 24,
-    borderRadius: 191 / 2,
-    borderColor: "#bb64c8",
-    borderStartColor: "white"
-  },
 
-});
 
 export default AnimatedCircle;

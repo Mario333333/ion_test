@@ -26,6 +26,7 @@ const Movement = (props) => {
         }}>2 m</Text>
         <Text style={styles.textSubttextTitleitle}>$ 350,000.00</Text>
       </View >
+
     </View >
   );
 };
@@ -38,7 +39,6 @@ const styles = StyleSheet.create({
     padding: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#bbbbbb',
-
   },
   containerImage: {
     left: 10,

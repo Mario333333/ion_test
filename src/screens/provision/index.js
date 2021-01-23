@@ -6,7 +6,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView
+
 } from 'react-native';
 
 import AvailableBalance from './components/available_balance'
@@ -19,8 +19,9 @@ const Provision = (props) => {
   const [price, setPrice] = useState("$350,000.00");
 
 
-  return (<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+  return (
     <View style={styles.container}>
+
       <View style={styles.header} >
         <TouchableOpacity onPress={() => {
           navigation.navigate('Home')
@@ -42,35 +43,43 @@ const Provision = (props) => {
           value={price}
           onChangeText={setPrice} />
       </View>
+
       <Text style={styles.textTerm}>Selecciona tu plazo</Text>
       <MonthlyTerm />
-      <TouchableOpacity title="Pagar ahora" style={styles.button}><Text style={styles.textButton}>LO QUIERO</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.button}><Text style={styles.textButton}>LO QUIERO</Text></TouchableOpacity>
 
     </View >
-  </ScrollView>
+
   );
 };
 
 const styles = StyleSheet.create({
-  masterContainer: {
-    flex: 1,
-  },
+
   container: {
     flex: 1,
     alignSelf: "center",
     display: "flex",
     flexDirection: "column",
-    width: "80%",
+    width: "85%",
+  },
+  header: {
+    paddingTop: 36,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   textTitle: {
-    position: "absolute",
-    top: 117,
+    paddingTop: 21,
     fontSize: 24,
     fontWeight: "600",
     fontStyle: "normal"
   },
+  content: {
+    paddingTop: 24,
+  },
+
   textTerm: {
-    top: 320,
+    paddingTop: 18,
     color: "#333333",
     fontSize: 14,
     fontWeight: "600",
@@ -90,17 +99,9 @@ const styles = StyleSheet.create({
     marginBottom: 12
 
   },
-  content: {
-    top: 310,
-  },
-  header: {
-    top: 72,
-    flexDirection: "row",
-    alignItems: "center"
-  },
+
   textCancel: {
-    position: "absolute",
-    right: 0,
+
     fontStyle: "normal",
     fontSize: 15,
     fontWeight: "normal",
@@ -109,7 +110,8 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#5acaee",
     position: "absolute",
-    top: 724,
+    alignSelf: "center",
+    bottom: 0,
     width: 310,
     height: 52,
     display: "flex",

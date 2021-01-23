@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  TextInput
 } from 'react-native';
 
 import AnimatedCircle from "./components/animated_circle"
 const MonthlyTerm = (props) => {
+  const [percent, setPercent] = useState("0")
+
   return (
     <View style={styles.container}>
       <AnimatedCircle />
       <View style={styles.textContainer}>
         <Text style={styles.textTitle}>Saldo disponible</Text>
         <Text style={styles.textAmount}>$12,000.00</Text>
-        <Text style={styles.textTerm}>a 60 meses</Text>
+
+        <Text style={styles.textTerm}>a
+        <TextInput
+            style={styles.inputTextForm}
+            value={percent}
+            onChangeText={setPercent} /> meses</Text>
         <Text style={styles.textInterest}>Taza e interés</Text>
         <Text style={styles.textInterest}>16.6%</Text>
       </View>
@@ -24,8 +32,9 @@ const MonthlyTerm = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    top: 340,
+
     alignSelf: "center",
+    backgroundColor: "rgba(255, 255, 255, 0) "
   },
   textContainer: {
     position: "absolute",

@@ -52,16 +52,21 @@ const MovementsSection = () => {
   )
   return (
     <View style={styles.container}>
+
       <View style={styles.header}>
         <Text style={styles.textMovements}>Tus movimientos</Text>
         <Text style={styles.textSeeAll}>Ver todos</Text>
       </View >
-      <ScrollView style={styles.containerMovements}>
+
+      <ScrollView
+        scrollEnabled
+        contentContainerStyle={{ height: 890 }}
+      >
         {
           dataMovements.map((item) => <Movement key={item.id} item={item} />)
         }
-
       </ScrollView>
+
 
     </View >
   );
