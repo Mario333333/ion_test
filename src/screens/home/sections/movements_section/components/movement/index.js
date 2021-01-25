@@ -17,14 +17,14 @@ const Movement = (props) => {
       <Image style={styles.containerImage} source={item.image}></Image>
       <View style={styles.containerTitle}>
         <Text style={styles.textTitle}>{item.title}</Text>
-        <Text style={styles.textSubtitle}>Mis logros</Text>
+        <Text style={styles.textSubtitle}>{item.subTitle}</Text>
       </View >
       <View style={styles.containerInfo}>
         <Text style={{
           ...styles.textSubtitle,
           fontWeight: "300"
-        }}>2 m</Text>
-        <Text style={styles.textSubttextTitleitle}>$ 350,000.00</Text>
+        }}>{item.time}</Text>
+        <Text style={styles.textSubttextTitleitle}>{item.amount}</Text>
       </View >
 
     </View >

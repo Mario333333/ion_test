@@ -19,10 +19,7 @@ const MonthlyTerm = (props) => {
         <Text style={styles.textAmount}>$12,000.00</Text>
 
         <Text style={styles.textTerm}>a
-        <TextInput
-            style={styles.inputTextForm}
-            value={percent}
-            onChangeText={setPercent} /> meses</Text>
+        60 meses</Text>
         <Text style={styles.textInterest}>Taza e interés</Text>
         <Text style={styles.textInterest}>16.6%</Text>
       </View>
