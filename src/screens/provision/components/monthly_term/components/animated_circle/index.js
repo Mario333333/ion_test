@@ -42,17 +42,13 @@ const AnimatedCircle = (props) => {
       }
     ).start(() => rotate())
   }
-
-
   const valuesToRotate = rotateValue.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, finalPoint]
+    outputRange: [startingPoint, finalPoint]
   })
-
   const strokeDashoffset = Animated.multiply(valuesToRotate, radius)
-
   return (
-    <Svg height={size} width={size}  >
+    <Svg height={size} width={size} >
       <Circle
         cx={size / 2}
         cy={size / 2}
@@ -71,42 +67,21 @@ const AnimatedCircle = (props) => {
 
       />
       <AnimatedComponent
-
         cx={size / 2}
         cy={size / 2}
         r={radius}
         stroke="#bb64c8"
         strokeDasharray={`${perimeter}`}
-
         strokeWidth={strokeWidth}
         {...{ strokeDashoffset }}
+        rotation={0}
 
-
-
+        strokeLinecap="round"
       />
     </Svg>
   );
 };
 
-const styles = StyleSheet.create({
 
-  circleShadow: {
-    position: "absolute",
-    width: 190,
-    height: 190,
-    borderRadius: 95,
-    backgroundColor: "rgba(32, 161, 202, 0.1)",
-  },
-  roatingCircle: {
-    width: 190,
-    height: 190,
-    backgroundColor: "white",
-    borderRadius: 95,
-    borderWidth: 24,
-    borderColor: "#bb64c8",
-    borderEndColor: "transparent"
-  },
-
-});
 
 export default AnimatedCircle;
