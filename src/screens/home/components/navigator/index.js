@@ -19,11 +19,7 @@ const Navigator = (props) => {
     <View style={{
       ...styles.container,
     }}>
-      <TouchableOpacity onPress={() => {
-        navigation.navigate('Provision')
-      }}>
-        <Money width="21" height="20" ></Money>
-      </TouchableOpacity>
+
       <TouchableOpacity onPress={() => {
         navigation.navigate('Provision')
       }}>
