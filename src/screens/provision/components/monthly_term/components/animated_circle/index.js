@@ -48,7 +48,7 @@ const AnimatedCircle = (props) => {
   })
   const strokeDashoffset = Animated.multiply(valuesToRotate, radius)
   return (
-    <Svg height={size} width={size} >
+    <Svg height={size} width={size} rotation={-45}>
       <Circle
         cx={size / 2}
         cy={size / 2}
@@ -74,8 +74,6 @@ const AnimatedCircle = (props) => {
         strokeDasharray={`${perimeter}`}
         strokeWidth={strokeWidth}
         {...{ strokeDashoffset }}
-        rotation={0}
-
         strokeLinecap="round"
       />
     </Svg>
